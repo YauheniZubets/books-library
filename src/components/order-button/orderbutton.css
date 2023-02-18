@@ -1,0 +1,127 @@
+.bigcard-button{
+    background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+    border-radius: 20px;
+    border: none;
+    width: 97%;
+    height: 40px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.bigcard-button-busy {
+    background: #F9F9FA;
+    border: 1px solid #BFC4C9;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: #A7A7A7;
+}
+.bigcard-button-booked {
+    border: 1px solid #BFC4C9;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: #363636;
+    background: none;
+}
+.bigcard-button-wide {
+    width: 350px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 24px;
+}
+.bigcard-button-medium {
+    width: 174px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 18px;
+}
+@media screen and (max-width: 1000px) {
+    .bigcard-button {
+        font-size: 9px;
+        line-height: 14px;
+    }
+}
+@media screen and (max-width: 930px) {
+    .bigcard-button-medium {
+        width: 135px
+    }
+}
+@media screen and (max-width: 850px) {
+    .bigcard-button-medium {
+        width: 115px
+    }
+}
+@media screen and (max-width: 768px) {
+    .bigcard-button-medium {
+        width: 174px
+    }
+    .bigcard-button-wide {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        width: 300px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .bigcard-button-medium {
+        width: 135px
+    }
+    .bigcard-button-wide {
+        width: 280px;
+    }
+}
+@media screen and (max-width: 580px) {
+    .bigcard-button-medium {
+        width: 115px
+    }
+    .bigcard-button-wide {
+        width: 260px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .bigcard-button-medium {
+        width: 100px
+    }
+    .bigcard-button-wide {
+        width: 210px;
+    }
+}
+@media screen and (max-width: 490px) {
+    .bigcard-button-medium {
+        width: 200px
+    }
+}
+@media screen and (max-width: 450px) {
+    .bigcard-button-medium {
+        width: 170px
+    }
+    .bigcard-button-wide {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 420px)   {
+    .bigcard-button {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .bigcard-button-medium {
+        width: 186px
+    }
+}

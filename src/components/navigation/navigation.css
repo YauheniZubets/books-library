@@ -1,0 +1,124 @@
+.navigation {
+    max-width: 300px;
+}
+.navigation-name-cover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.navigation-name-cover > div:last-child {
+    display: flex;
+    align-self: center;
+    padding-left: 10px;
+}
+.navigation-name-cover img {
+    cursor: pointer;
+}
+.navigation-name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+    color: #363636;
+    cursor: pointer;
+}
+.navigation-all {
+    padding-left: 20px;
+    padding-top: 16px;
+    padding-bottom: 42px;
+    display: block;
+}
+.navigation-hidden {
+    display: none;
+}
+.navigation-wide-padding {
+    padding-bottom: 42px;
+}
+.navigation-all-books {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #363636;
+    padding-bottom: 16px;
+}
+.navigation-list ul li {
+    padding-bottom: 16px;
+}
+.coloredLink {
+    color: #f9971c;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom-style: solid;
+    border-color: #f88900;
+    border-width: 0.5px;
+}
+.coloredLink li {
+    color: #f9971c;
+    font-weight: 700;
+    font-size: 18px;
+}
+.text-normal {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #363636;
+}
+.text-active {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+    background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.text-light{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #A7A7A7;
+}
+.navigation-rules {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+    color: #363636;
+    padding-bottom: 42px;
+}
+@media screen and (max-width: 1300px) {
+    .navigation {
+        flex-basis: 22%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .navigation-list ul li {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .navigation-list ul li > span {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+}

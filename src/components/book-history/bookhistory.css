@@ -1,0 +1,17 @@
+.book-history {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0;
+    gap: 4px;
+    height: auto;
+    background: #F9F9FA;
+}
+.book-history ul {
+    width: 81.5%;
+    margin: auto;
+}
+.book-history ul li {
+    display: inline-block;
+    vertical-align: middle;
+}

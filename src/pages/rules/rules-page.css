@@ -1,0 +1,57 @@
+.rules-page {
+    min-height: 100vh;
+}
+.rules-page-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 62px;
+}
+.rules-page-head {
+    padding-bottom: 32px;
+}
+.rules-page-head-and-body {
+    flex-basis: 70%;
+}
+.rules-page-body {
+    display: flex;
+    flex-direction: column;
+}
+.rules-page-body-small-headers {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #363636;
+    padding-bottom: 32px;
+}
+.rules-page-body-small {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #363636;
+    padding-left: 30px;
+    padding-top: 16px;
+}
+.rules-page-body-small > div {
+    padding-bottom: 16px;
+}
+.rules-page-body-small-pad {
+    padding-left: 30px;
+    padding-top: 16px;
+}
+.rules-page-body-small-pad > div {
+    padding-bottom: 16px;
+}
+.rules-page-body-small-pad-second {
+    padding-left: 30px;
+    padding-top: 16px;
+}
+.rules-page-body-small-pad-second > div {
+    padding-bottom: 16px;
+}

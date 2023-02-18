@@ -1,0 +1,6 @@
+.mySwiperPag > .swiper-wrapper {
+    height: 95%;
+}
+.mySwiperPag > .swiper-pagination {
+    bottom: var(--swiper-pagination-bottom,-3px);
+}
