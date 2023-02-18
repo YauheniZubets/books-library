@@ -1,0 +1,151 @@
+.smallcard {
+    display: flex;
+    flex-direction: row;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24);
+    border-radius: 12px;
+    width: 100%;
+    min-height: 218px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+.smallcard-image {
+    display: flex;
+    align-self: flex-start;
+    padding-right: 16px;
+}
+.smallcard-image img {
+    max-width: 120px;
+}
+.smallcard-no-book {
+    background: #F9F9FA;
+    border: 1px solid #A7A7A7;
+    border-radius: 10px;
+    height: 170px;
+    width: 120px;
+    position: relative;
+}
+.smallcard-no-book img {
+    position: absolute;
+    top: 34%;
+    left: 30%
+}
+.smallcard-name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    color: #363636;
+    padding-bottom: 8px;
+    flex-basis: 60%;
+}
+.smallcard-author {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1px;
+    color: #727272;
+    padding-bottom: 24px;
+}
+.smallcard-data {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+.smallcard-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+@media screen and (max-width: 900px) {
+    .smallcard-name {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .smallcard-name {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .smallcard-author {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .smallcard-name {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .smallcard-author {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .smallcard-name {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .smallcard-author {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .smallcard-name {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 600;
+    }
+    .smallcard-author {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .smallcard {
+        padding: 18px;
+    }
+}
+@media screen and (max-width: 490px) {
+    .smallcard-order {
+        flex-direction: column;
+        align-items: center;
+        height: 90px;
+    }
+    .smallcard-author {
+        padding-bottom: 14px;
+    }
+    .smallcard-image img {
+        max-width: 100px;
+    }
+    .smallcard-no-book {
+        max-width: 100px;
+        max-height: 140px;
+    }
+    .smallcard-image {
+        padding-right: 8px;
+    }
+    .smallcard {
+        padding: 16px 16px 16px 8px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .smallcard-image img {
+        max-width: 70px;
+    }
+    .smallcard-no-book {
+        max-width: 70px;
+        max-height: 100px;
+    }
+    .smallcard-no-book img {
+        top: 24%;
+        left: 17%;
+    }
+}

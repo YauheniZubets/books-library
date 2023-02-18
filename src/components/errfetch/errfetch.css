@@ -1,0 +1,30 @@
+.url-error {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px 32px;
+    gap: 10px;
+    position: absolute;
+    width: 81.5%;
+    height: 80px;
+    top: 64px;
+    z-index: 100;
+    background: #FEEBEA;
+    border: 1.5px solid #F42C4F;
+    border-radius: 5px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #363636;
+    left: 9%;
+}
+.url-error > div {
+    margin: auto;
+}
+.url-error > img {
+    margin: auto;
+}

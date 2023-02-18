@@ -1,0 +1,150 @@
+.bigcard {
+    min-height: 470px;
+    width: 96%;
+    max-width: 190px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24);
+    border-radius: 10px;
+    padding: 8px 8px 24px 8px;
+    display: flex;
+    flex-direction: column;
+}
+.bigcard-image-wrapper {
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bigcard-image-wrapper > img {
+    max-height: 250px;
+}
+.bigcard-stars-or-empty {
+    padding-top: 16px;
+}
+.bigcard-book-name{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: top;
+    letter-spacing: 0.1px;
+    color: #363636;
+    width: 95%;
+    height: 124px;
+    padding-top: 22px;
+    overflow: hidden;
+}
+.bigcard-no-book{
+    background: #F9F9FA;
+    border: 1px solid #A7A7A7;
+    border-radius: 10px;
+    height: 17vw;
+    width: 94%;
+    position: relative;
+}
+.bigcard-author {
+    padding-bottom: 28px;
+    min-height: 90px;
+    padding-top: 8px;
+}
+.bigcard-no-book img {
+    position: absolute;
+    top: 40%;
+    left: 36%
+}
+@media screen and (max-width: 1400px) {
+    .bigcard-book-name{ 
+        padding-top: 14px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .bigcard {
+        height: 100%;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .bigcard-no-book img {
+        left: 32%;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .bigcard-book-name {
+        font-size: 12px;
+        line-height: 18px;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .bigcard-stars-or-empty {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .bigcard {
+        min-height: 420px;
+    }
+    .bigcard-book-name {
+        font-size: 11px;
+        line-height: 16px;
+        overflow: hidden;
+    }
+    .bigcard-author {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .bigcard-no-book img {
+        left: 26%;
+        top: 35%;
+    }
+}
+@media screen and (max-width: 850px) {
+    .bigcard-no-book {
+        height: 25vw
+    }
+    .bigcard-no-book img {
+        left: 31%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .bigcard-no-book {
+        height: 32vw
+    }
+}
+@media screen and (max-width: 630px) {
+    .main-cards {
+        column-gap: 5px;
+    }
+}
+@media screen and (max-width: 520px) {
+    .bigcard-no-book {
+        height: 47vw;
+    }
+}
+@media screen and (max-width: 420px)   {
+    .bigcard {
+        min-width: 288px;
+        min-height: 470px;
+    }
+    .bigcard-no-book {
+        min-width: 174px;
+        min-height: 242px;
+    }
+    .bigcard-no-book img {
+        left: 37%;
+        top: 40%;
+    }
+    .bigcard > div:first-child {
+        align-self: center;
+    }
+    .bigcard-book-name {
+        font-size: 14px;
+        line-height: 18px;
+        height: 80px;
+    }
+    .bigcard-author {
+        padding-bottom: 20px;
+    }
+}
