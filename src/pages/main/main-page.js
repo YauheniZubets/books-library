@@ -22,8 +22,6 @@ export const MainPage = (props) => {
 
     const {isLoading, isError} = useSelector(state=>state.allBooksList);
     const bookList = useSelector(state => state.allBooksList.allBooks.payload);
-    const globalState = useSelector(state => state)
-    // console.log('bookList: ', globalState);
 
     let bigCards = null;
     let smallCards = null;
@@ -40,6 +38,7 @@ export const MainPage = (props) => {
                 year = {item.issueYear}
                 booking = {item.booking}
                 id= {item.id}
+                categsArr = {item.categories}
             />
         );
         smallCards = bookList.map( item => 
@@ -53,6 +52,7 @@ export const MainPage = (props) => {
                 year = {item.issueYear}
                 booking = {item.booking}
                 id= {props.id}
+                categsArr = {item.categories}
             />
         )
     }

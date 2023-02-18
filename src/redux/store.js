@@ -3,6 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import { all } from "redux-saga/effects";
 
 import { menuReducer } from "./toolkit-reducer";
+import { choosedCategoryReducer } from "./choosedcategory-reducer";
 import { fetchAllBooksReducer } from "./books-reducer";
 import { fetchAllCategoriesReducer } from "./categories-reducer";
 import { fetchOneBookReducer } from "./book-id-reducer";
@@ -22,6 +23,7 @@ function* rootSaga() {
 
 const rootReducer = combineReducers({
     toolkit: menuReducer,
+    choosedCategory: choosedCategoryReducer,
     allBooksList: fetchAllBooksReducer,
     allCategories: fetchAllCategoriesReducer,
     book: fetchOneBookReducer

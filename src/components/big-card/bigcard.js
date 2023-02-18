@@ -1,5 +1,8 @@
 import { Link, useLocation, useParams } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { choosedCategory } from '../../redux/choosedcategory-reducer';
+
 import { OrderButton } from '../order-button/orderbutton';
 import { Stars } from '../stars/stars';
 
@@ -9,13 +12,19 @@ import catNoBook from './img/cat.svg';
 import './bigcard.css';
 
 export const BigCard = (props) => {
-    // переход по props.id
+
+    const {categsArr} = props;
     const loc = useLocation();
 
     const param = useParams();
+    const dispatch = useDispatch();
+
+    const cbChoosecategory = () => {
+        dispatch(choosedCategory(categsArr));
+    }
    
     return (
-        <Link to={`/books/${param.category || 'all'}/${props.id}`}>
+        <Link to={`/books/${param.category || 'all'}/${props.id}`} onClick={cbChoosecategory} role='presentation'>
             <section className='bigcard' data-test-id='card'  >
                 <div className='bigcard-image-wrapper'>
                     {

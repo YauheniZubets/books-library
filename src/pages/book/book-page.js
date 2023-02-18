@@ -18,6 +18,10 @@ import './book-page.css';
 export const BookPage = (props) => {
 
     const location = useParams();
+
+    const arrCategories = useSelector(state=>state.choosedCategory.choosedCategory.payload);
+    let firstCategory = null;
+    if (arrCategories) [firstCategory] = arrCategories;
     
     const lastLoc = location.numb;
 
@@ -40,10 +44,7 @@ export const BookPage = (props) => {
             }
             {isLoading && <Preloader />}
             <div className='main-page'><Header isMenuOpen={props.isMenuOpen} clickCross={props.clickCross} /></div>
-        {
-            fetchedBook &&
-            <BookHistory title={fetchedBook.title} categories={fetchedBook.categories}  />
-        }
+            <BookHistory title={fetchedBook} categories={firstCategory}  />
         {
             fetchedBook ?
             <div className='main-page'>
