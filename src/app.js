@@ -11,10 +11,6 @@ import { BookPage } from './pages/book';
 import { RulesPage } from './pages/rules';
 import { Agreement } from './pages/agreement';
 
-import preloader from './img/preloader.svg';
-
-
-
 export const App = () => {
 
     const [allLinks, toogleAllLinks] = useState(true);
@@ -22,8 +18,6 @@ export const App = () => {
     const dispatch = useDispatch();
 
     const mobMenu = useSelector(state => state.toolkit.showMobileMenu);
-
-    const {isLoading} = useSelector(state=>state.allBooksList);
 
     const toogleLinks = () => toogleAllLinks(!allLinks);
 
@@ -39,9 +33,6 @@ export const App = () => {
 
     return (
         <div onClick={cbCloseBurger} role='presentation'>
-        {isLoading && <div className='preloader' data-test-id='loader'><img src={preloader} alt='preloader' /></div>}
-       
-        
             <HashRouter>
                 <Routes>
                     <Route path='/' exact={true} element={<Navigate to='/books/all' />} />

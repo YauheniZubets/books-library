@@ -7,11 +7,10 @@ import { Footer } from '../../components/footer/footer';
 import { BookHistory } from '../../components/book-history/bookhistory';
 import { BookData } from '../../components/book-data/bookdata';
 import { ErrFetch } from '../../components/errfetch/errfetch';
+import { Preloader } from '../../components/preloader/preloader';
 
 import { threeBooks } from './3books';
 import { axiosOneBookStart } from '../../saga/book-id-saga';
-
-import preloader from '../../img/preloader.svg';
 
 import './book-page.css';
 
@@ -29,8 +28,7 @@ export const BookPage = (props) => {
     }, [dispatch, lastLoc]);
     
     const fetchedBook = useSelector(state => state.book.book.payload);
-    const isLoading = useSelector(state=>state.book.isloading);
-    const {isError} = useSelector(state=>state.book);
+    const {isLoading, isError} = useSelector(state=>state.book);
 
     const book = threeBooks.find(item => item.key === +lastLoc[lastLoc.length-1]);
 
@@ -40,7 +38,7 @@ export const BookPage = (props) => {
                 isError &&
                 <ErrFetch />
             }
-            {isLoading && <div className='preloader'><img src={preloader} alt='preloader' /></div>}
+            {isLoading && <Preloader />}
             <div className='main-page'><Header isMenuOpen={props.isMenuOpen} clickCross={props.clickCross} /></div>
         {
             fetchedBook &&

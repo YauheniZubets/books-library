@@ -64,13 +64,14 @@ export const Navigation = (props) => {
             <div className={classNames('navigation-all', {[`navigation-hidden`]:!props.allLinks})}>
                 <div className='navigation-list'>
                     <ul> 
-                        <NavLink to='/books/all' className={({ isActive }) => isActive ? 'coloredLink' : undefined}
-                            // data-test-id = {item.key === 0 ? 'navigation-books' : ''}
-                        >
-                            <li className='text-normal'>Все книги 
-                                <span className='text-light'> {booksQuan}</span>
-                            </li>
-                        </NavLink>
+                        {
+                            categs && 
+                            <NavLink to='/books/all' className={({ isActive }) => isActive ? 'coloredLink' : undefined} >
+                                <li className='text-normal'>Все книги 
+                                    <span className='text-light'> {booksQuan}</span>
+                                </li>
+                            </NavLink>
+                        }
                         {categsList}
                     </ul>
                 </div>

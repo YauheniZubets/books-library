@@ -10,6 +10,7 @@ import { Footer } from '../../components/footer/footer';
 import { ErrFetch } from '../../components/errfetch/errfetch';
 
 import './main-page.css';
+import { Preloader } from '../../components/preloader/preloader';
 
 export const MainPage = (props) => {
 
@@ -19,7 +20,7 @@ export const MainPage = (props) => {
         if (choosedView !== view) changeView(choosedView);
     }
 
-    const {isError} = useSelector(state=>state.allBooksList);
+    const {isLoading, isError} = useSelector(state=>state.allBooksList);
     const bookList = useSelector(state => state.allBooksList.allBooks.payload);
     const globalState = useSelector(state => state)
     // console.log('bookList: ', globalState);
@@ -54,9 +55,7 @@ export const MainPage = (props) => {
                 id= {props.id}
             />
         )
-
     }
-
 
     return (
     <section className='main-page'>
@@ -66,39 +65,26 @@ export const MainPage = (props) => {
         }
         <Header isMenuOpen={props.isMenuOpen} clickCross={props.clickCross}  />
         <div className='main-nav-and-data'>
+            {
+                isLoading &&
+                <Preloader />
+            }
             <Navigation toogleLinks = {props.toogleLinks} allLinks = {props.allLinks} />
             <div className='main-filter-and-cards'>
-                <SearchAndFilter anotherView={anotherView} view={view} />
+                {
+                    bookList && 
+                    <SearchAndFilter anotherView={anotherView} view={view} />
+                }
                 {
                     view === 'tile' &&
                     <div className='main-cards'>
                         {bigCards}
-                        {/* <BigCard name='Грокаем алгоритмы. Иллюстрированное пособие для програ...' stars = {false} image = {false} bookKey={0} />
-                        <BigCard name='Грокаем алгоритмы. Иллюстрированное' stars = {true} image = {true} imgQuan={1} bookKey={1} />
-                        <BigCard name='Грокаем алгоритмы' stars = {true} busy = {true} image = {true} imgQuan={5} date='03.05' bookKey={2} />
-                        <BigCard name='Грокаем алгоритмы. Иллюстрированное пособие для програ...' stars = {true} image = {true}  />
-                        <BigCard name='Грокаем алгоритмы. Иллюстрированное пособие для програ...' stars = {true} booked = {true} image = {true} />
-                        <BigCard name='Грокаем алгоритмы. Иллюстрированное' stars = {false} image = {false} busy = {true} date='23.04' />
-                        <BigCard name='Грокаем алгоритмы' stars = {true} image = {true} />
-                        <BigCard name='Грокаем алгоритмы. Иллюстрированное пособие для програ...' stars = {true} image = {true} />
-                        <BigCard name='Грокаем алгоритмы. Иллюстрированное пособие для програ...' stars = {true} image = {true} />
-                        <BigCard name='Грокаем алгоритмы. Иллюстрированное пособие для програ...' stars = {true} image = {false} /> */}
                     </div>
                 }
                 {
                     view === 'rows' &&
                     <div className='main-cards-small'>
                         {smallCards}
-                        {/* <SmallCard name='Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих' stars = {false} image = {false} bookKey={0} />
-                        <SmallCard name='Грокаем алгоритмы. Иллюстрированное' stars = {true} image = {true} imgQuan={1} bookKey={1} />
-                        <SmallCard name='Грокаем алгоритмы' stars = {true} busy = {true} image = {true} imgQuan={5} date='03.05' bookKey={2} />
-                        <SmallCard name='Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих' stars = {true} image = {true} />
-                        <SmallCard name='Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих' stars = {true} booked = {true} image = {true} />
-                        <SmallCard name='Грокаем алгоритмы. Иллюстрированное' stars = {false} image = {false} busy = {true} date='23.04' />
-                        <SmallCard name='Грокаем алгоритмы' stars = {true} image = {true} />
-                        <SmallCard name='Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих' stars = {true} image = {true} />
-                        <SmallCard name='Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих' stars = {true} image = {true} />
-                        <SmallCard name='Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих' stars = {true} image = {false} /> */}
                     </div>
                 }
             </div>
