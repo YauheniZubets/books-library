@@ -11,7 +11,7 @@ function* axiosOneBook (id) {
     console.log('ONEbookfetching');
     try {
         yield put(fetchOneBook());
-        const data = yield call(() => axios.get(`https://strapi.cleverland.by/api/boos/${id.id}`));
+        const data = yield call(() => axios.get(`https://strapi.cleverland.by/api/books/${id.id}`));
         yield put(fetchOneBookSuccess(data.data))
     } catch (error) {
         yield put(fetchOneBookErr());
