@@ -1,18 +1,30 @@
 import { Link, useParams } from 'react-router-dom';
+import Highlighter from "react-highlight-words";
+import { useDispatch } from 'react-redux';
+import { choosedCategory } from '../../redux/choosedcategory-reducer';
 
-import './smallcard.css';
 import smallBook from './img/book.png';
 import catNoBook from '../big-card/img/cat.svg';
 
 import { OrderButton } from '../order-button/orderbutton';
 import { Stars } from '../stars/stars';
 
+import './smallcard.css';
+
 export const SmallCard = (props) => {
+
+    const {categsArr, searchedValue} = props;
 
     const param = useParams();
 
+    const dispatch = useDispatch();
+
+    const cbChoosecategory = () => {
+        dispatch(choosedCategory(categsArr));
+    }
+
     return (
-        <Link to={`/book/${param.category || 'all'}/:${props.bookKey}`}>
+        <Link to={`/books/${param.category || 'all'}/${props.id}`} onClick={cbChoosecategory} role='presentation'>
             <section className='smallcard' data-test-id='card'>
                 <div className='smallcard-image'>
                     {
@@ -24,7 +36,13 @@ export const SmallCard = (props) => {
                     }
                 </div>
                 <div className='smallcard-data'>
-                    <div className='smallcard-name'>{props.title}</div>
+                    <div className='smallcard-name'>
+                        <Highlighter highlightClassName="YourHighlightClass" 
+                            searchWords={[`${searchedValue}`]}
+                            textToHighlight={props.title}
+                            data-test-id='highlight-matches'
+                        />
+                    </div>
                     <div className='smallcard-author'>{props.authors[0]}, {props.year}</div>
                     <div className='smallcard-order'>
                         {

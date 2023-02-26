@@ -46,8 +46,15 @@
     color: #363636;
     padding-bottom: 16px;
 }
-.navigation-list ul li {
+.navigation-list ul div {
     padding-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.navigation-list ul a {
+    width: auto;
+    padding-right: 5px;
 }
 .coloredLink {
     color: #f9971c;
@@ -112,7 +119,7 @@
         font-size: 12px;
         line-height: 16px;
     }
-    .navigation-list ul li > span {
+    .navigation-list ul div > span {
         font-size: 12px;
         line-height: 16px;
     }

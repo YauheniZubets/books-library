@@ -54,6 +54,10 @@
     top: 40%;
     left: 36%
 }
+.YourHighlightClass {
+    color: #ff5253;
+    background-color: white;
+}
 @media screen and (max-width: 1400px) {
     .bigcard-book-name{ 
         padding-top: 14px;

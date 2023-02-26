@@ -1,7 +1,9 @@
+/*eslint-disable*/
 import { Link, useLocation, useParams } from 'react-router-dom';
-
+import Highlighter from 'react-highlight-words';
 import { useDispatch } from 'react-redux';
 import { choosedCategory } from '../../redux/choosedcategory-reducer';
+
 
 import { OrderButton } from '../order-button/orderbutton';
 import { Stars } from '../stars/stars';
@@ -12,8 +14,8 @@ import catNoBook from './img/cat.svg';
 import './bigcard.css';
 
 export const BigCard = (props) => {
-
-    const {categsArr} = props;
+    
+    const {categsArr, searchedValue} = props;
     const loc = useLocation();
 
     const param = useParams();
@@ -21,8 +23,12 @@ export const BigCard = (props) => {
 
     const cbChoosecategory = () => {
         dispatch(choosedCategory(categsArr));
-    }
-   
+    };
+
+    const Highlight = ({ children }) => (
+        <span className="YourHighlightClass" data-test-id='highlight-matches'>{children}</span>
+    );
+
     return (
         <Link to={`/books/${param.category || 'all'}/${props.id}`} onClick={cbChoosecategory} role='presentation'>
             <section className='bigcard' data-test-id='card'  >
@@ -42,7 +48,13 @@ export const BigCard = (props) => {
                         : 'ещё нет оценок' 
                     }  
                 </div>
-                <div className='bigcard-book-name'>{props.title}</div>
+                <div className='bigcard-book-name'>
+                    <Highlighter highlightClassName="YourHighlightClass" 
+                        searchWords={[`${searchedValue}`]}
+                        textToHighlight={props.title}
+                        highlightTag={Highlight}
+                    />
+                </div>
                 <div className='bigcard-author'>{props.authors[0]}, {props.year}</div>
                 <div>
                     <OrderButton busy={props.busy} date={props.date} booking={props.booking} />

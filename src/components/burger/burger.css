@@ -77,10 +77,17 @@
     height: 100%;
     padding-bottom: 42px;
 }
-.Nav-Links-Mobile ul li {
+.Nav-Links-Mobile ul div {
     padding-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
-.Nav-Links-Mobile ul li:first-child {
+.Nav-Links-Mobile ul a {
+    width: auto;
+    padding-right: 5px;
+}
+.Nav-Links-Mobile ul div:first-child {
     padding-top: 16px;
 }
 .showMobile {
