@@ -44,7 +44,7 @@ export const BookPage = (props) => {
             }
             {isLoading && <Preloader />}
             <div className='main-page'><Header isMenuOpen={props.isMenuOpen} clickCross={props.clickCross} /></div>
-            <BookHistory title={fetchedBook} categories={firstCategory}  />
+            <BookHistory title={fetchedBook} category={firstCategory}  />
         {
             fetchedBook ?
             <div className='main-page'>

@@ -65,7 +65,9 @@ export const BookData = (props) => {
                     }
                 </div>
                 <div className='book-data-about'>
-                    <div className='book-data-name text-head'>{props.title}</div>
+                    <div className='book-data-name text-head'
+                        data-test-id='book-title'
+                    >{props.title}</div>
                     <div className='book-data-author'>
                         {props.authors[0]}, {props.year}
                     </div>

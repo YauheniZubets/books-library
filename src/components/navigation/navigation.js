@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -17,17 +18,22 @@ export const Navigation = (props) => {
     const [clickedCategory, setColorAllLinks] = useState(true);
 
     const categs = useSelector(state=>state.allCategories.allCategories.payload);
+    
+    const allBooks = useSelector(state=>state.allBooksList.allBooks.payload); // количество всех книг
 
-    const allBooksQuan = useSelector(state=>state.allBooksList.allBooks.payload);
+    const arrOfQuan = []; // массив количесва книг по категориям
+    if (categs && allBooks) {
+        categs.forEach(category => {
+            const filteredBooksArr = allBooks.filter(item => item.categories.includes(category.name));
+            arrOfQuan.push(filteredBooksArr.length);
+        });
+    }
 
     let categsList = null;
-    let booksQuan = null;
-
-    if(allBooksQuan) booksQuan=allBooksQuan.length;
 
     const loc = useLocation();
 
-    useEffect(() => loc.pathname.substring(1, 6)=== 'books' ? setColorAllLinks(true) : setColorAllLinks(false), [loc.pathname])
+    useEffect(() => loc.pathname.substring(1, 6)=== 'books' ? setColorAllLinks(true) : setColorAllLinks(false), [loc.pathname]) // выделение активного класса
 
     const cbShowAllLinks = (ev) => {
         if (!ev) return;
@@ -37,20 +43,36 @@ export const Navigation = (props) => {
         ev.stopPropagation();
     }
 
-    if (categs) {
-        categsList = categs.map( item => 
-            <NavLink to={`/books/:${item.path}`} 
-                key={item.id} 
-                className={({ isActive }) => isActive ? 'coloredLink' : undefined}
-                data-test-id = {item.key === 0 ? 'navigation-books' : ''}
-            >
-                <li className='text-normal'>{item.name} 
-                    <span className='text-light'> {item.id}</span>
-                </li>
-            </NavLink>
-        )
+    const cbCurrentCategory = (ev) => {
+        if (!ev) return;
+        const current = ev.target;
+        if (!current) return;
+        let curCategory = null;
+        if (current.tagName === 'LI') {
+            curCategory = current.getAttribute('value');
+            props.changeCategory(curCategory);
+        }
     }
 
+    if (categs) {
+        categsList = categs.map( (item, index) => 
+            <div key={item.id}>
+                <NavLink to={`/books/:${item.path}`} 
+                     
+                    className={({ isActive }) => isActive ? 'coloredLink' : undefined}
+                >
+                    <li className='text-normal' value = {item.name} data-test-id={`navigation-${item.path}`}>
+                        {item.name} 
+                    </li>
+                </NavLink>
+                <span className='text-light' data-test-id={`navigation-book-count-for-${item.path}`}
+                >
+                    {arrOfQuan[index]}
+                </span>
+            </div>
+        )
+    }
+    
     return (
         <section className='navigation'>
             <div className={classNames('navigation-name-cover', {[`navigation-wide-padding`]: !props.allLinks})}
@@ -63,14 +85,18 @@ export const Navigation = (props) => {
             </div>
             <div className={classNames('navigation-all', {[`navigation-hidden`]:!props.allLinks})}>
                 <div className='navigation-list'>
-                    <ul> 
+                    <ul onClick={cbCurrentCategory} role='presentation'> 
                         {
                             categs && 
-                            <NavLink to='/books/all' className={({ isActive }) => isActive ? 'coloredLink' : undefined} >
-                                <li className='text-normal'>Все книги 
-                                    <span className='text-light'> {booksQuan}</span>
-                                </li>
-                            </NavLink>
+                            <div>
+                                <NavLink to='/books/:all' className={({ isActive }) => isActive ? 'coloredLink' : undefined} 
+                                    data-test-id='navigation-books'
+                                >
+                                    <li className='text-normal'>Все книги 
+                                        <span className='text-light' />
+                                    </li>
+                                </NavLink> 
+                            </div>
                         }
                         {categsList}
                     </ul>

@@ -35,7 +35,7 @@ export const App = () => {
         <div onClick={cbCloseBurger} role='presentation'>
             <HashRouter>
                 <Routes>
-                    <Route path='/' exact={true} element={<Navigate to='/books/all' />} />
+                    <Route path='/' exact={true} element={<Navigate to='/books/:all' />} />
                     <Route path='/books/all' element={<MainPage allLinks={allLinks} toogleLinks={toogleLinks} />} />
                     <Route path='/books/:category' element={<MainPage allLinks={allLinks} toogleLinks={toogleLinks}  />} />
                     <Route path='/books/:category/:numb' element={<BookPage  />} />

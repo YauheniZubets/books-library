@@ -7,6 +7,7 @@ import { choosedCategoryReducer } from "./choosedcategory-reducer";
 import { fetchAllBooksReducer } from "./books-reducer";
 import { fetchAllCategoriesReducer } from "./categories-reducer";
 import { fetchOneBookReducer } from "./book-id-reducer";
+import { categForBreadReducer } from "./categforbread-reducer";
 
 import { watchAxiosProds } from "../saga/books-saga";
 import { watchAxiosCategories } from "../saga/categories-saga";
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
     choosedCategory: choosedCategoryReducer,
     allBooksList: fetchAllBooksReducer,
     allCategories: fetchAllCategoriesReducer,
-    book: fetchOneBookReducer
+    book: fetchOneBookReducer,
+    categForBread: categForBreadReducer
 })
 
 export const store = configureStore({

@@ -22,6 +22,15 @@
     width: 85%;
     padding: 0 5px 0 5px;
     background: #FFFFFF;
+    caret-color: #F83600;
+}
+.sort-button {
+    border: none;
+    display: inline;
+    width: 85%;
+    padding: 0 5px 0 5px;
+    background: #FFFFFF;
+    cursor: pointer;
 }
 .searchbar-outer-input div {
     margin: auto 0;
@@ -37,6 +46,7 @@
 }
 .searchbar-small {
     width: 150px;
+    cursor: pointer;
 }
 .searchbar-small img {
     margin-left: 12px;
@@ -45,6 +55,7 @@
 .searchbar-small input {
     padding: 0;
     width: 69%;
+    cursor: pointer;
 }
 .searchbar-view {
     filter: drop-shadow(0px 2px 4px rgba(191, 196, 201, 0.2)) drop-shadow(0px 3px 4px rgba(191, 196, 201, 0.18)) drop-shadow(0px 1px 5px rgba(191, 196, 201, 0.24));
@@ -94,6 +105,9 @@
         cursor: pointer;
     }
     .searchbar-outer-input input {
+        display: none;
+    }
+    .sort-button {
         display: none;
     }
     .searchbar-outer-input  img {
