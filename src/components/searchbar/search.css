@@ -31,18 +31,25 @@
     padding: 0 5px 0 5px;
     background: #FFFFFF;
     cursor: pointer;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: #A7A7A7;
 }
-.searchbar-outer-input div {
+.searchbar-outer-input > div {
     margin: auto 0;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .searchbar-outer-input img {
     display: inline;
-    height: 16px;
-    width: 16px;
     align-self: center;
     margin-left: 16px;
-    margin-right: 4px;
 }
 .searchbar-small {
     width: 150px;
