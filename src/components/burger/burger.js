@@ -3,7 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
-import { categories } from '../navigation/categories';
+import { authClearUser } from '../../redux/auth-user-reducer';
 
 import arrowTop from '../navigation/img/arrow-top.svg';
 import arrowBot from '../navigation/img/arrow-bot.svg';
@@ -54,6 +54,14 @@ export const Burger = (props) => {
     const cbCloseBurger = (ev) => {
         dispatch(showMobileMenu());
         ev.stopPropagation();
+    }
+
+    const cbLogOut = () => {
+        const loggedTokenUserFromLocal = localStorage.getItem('jwt');
+        if (loggedTokenUserFromLocal) {
+            localStorage.removeItem('jwt');
+            dispatch(authClearUser());
+        }
     }
 
     let categsList = null;
@@ -136,7 +144,7 @@ export const Burger = (props) => {
                     <NavLink to='' >Профиль</NavLink>
                 </div>
                 <div className='navigation-rules'>
-                    <NavLink to='' >Выход</NavLink>
+                    <NavLink to='/auth' onClick={cbLogOut} data-test-id='exit-button'>Выход</NavLink>
                 </div>
             </div>
         </section>

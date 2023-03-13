@@ -62,7 +62,7 @@ export const SearchAndFilter = (props) => {
                     role='presentation'
                     data-test-id='button-search-open'
                 >
-                    {!fullSearchInput && (focusedInp ? <img src={searchLogo} alt='search-or'/> : <img src={searchLogoBl} alt='search-bl'/>)}
+                    {!fullSearchInput && (focusedInp ? <img src={searchLogo} alt='search'/> : <img src={searchLogoBl} alt='search'/>)}
                     <input type='text' placeholder='Поиск книги или автора…'
                         data-test-id='input-search'
                         value={searchInp}

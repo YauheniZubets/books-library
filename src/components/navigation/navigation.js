@@ -1,11 +1,11 @@
 /*eslint-disable*/
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import classNames from 'classnames';
 
-import { categories } from './categories';
+import { authClearUser } from '../../redux/auth-user-reducer';
 
 import arrowTop from './img/arrow-top.svg';
 import arrowBot from './img/arrow-bot.svg';
@@ -16,6 +16,8 @@ import './navigation.css';
 export const Navigation = (props) => {
 
     const [clickedCategory, setColorAllLinks] = useState(true);
+
+    const dispatch = useDispatch();
 
     const categs = useSelector(state=>state.allCategories.allCategories.payload);
     
@@ -51,6 +53,14 @@ export const Navigation = (props) => {
         if (current.tagName === 'LI') {
             curCategory = current.getAttribute('value');
             props.changeCategory(curCategory);
+        }
+    }
+
+    const cbLogOut = () => {
+        const loggedTokenUserFromLocal = localStorage.getItem('jwt');
+        if (loggedTokenUserFromLocal) {
+            localStorage.removeItem('jwt');
+            dispatch(authClearUser());
         }
     }
 
@@ -121,7 +131,7 @@ export const Navigation = (props) => {
                 <NavLink to='' >Профиль</NavLink>
             </div>
             <div className='navigation-rules'>
-                <NavLink to='' >Выход</NavLink>
+                <NavLink to='/auth' onClick={cbLogOut} data-test-id='exit-button'>Выход</NavLink>
             </div>
         </section>
     )

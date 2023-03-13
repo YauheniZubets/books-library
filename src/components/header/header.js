@@ -14,7 +14,7 @@ export const Header = (props) => (
             <div className='header-burger'>
                 <Burger isMenuOpen={props.isMenuOpen} clickCross={props.clickCross} />
             </div>
-            <Link to='/'>
+            <Link to='/books/all'>
                 <div className='cleverland-logo'>
                     <img src={logo} alt='logo'/>
                 </div>

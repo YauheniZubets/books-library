@@ -1,6 +1,8 @@
 import {takeEvery, call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
+import { userToken } from './user-interception';
+
 import { fetchAllBooks, fetchAllBooksSuccess, fetchAllBooksErr } from '../redux/books-reducer';
 
 export function* watchAxiosProds () {

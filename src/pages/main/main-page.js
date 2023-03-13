@@ -1,6 +1,6 @@
 /*eslint-disable*/
-import { useEffect, useState, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { Header } from '../../components/header/header';
@@ -16,12 +16,19 @@ import './main-page.css';
 
 export const MainPage = (props) => {
 
-    const currentLocation = useParams().category.substring(1); // по url получаем категорию текущую и сравниваем
+    const {authUser} = useSelector(state => state.authUser);
+
+    const navigate = useNavigate();
+    if (!authUser) navigate('/auth');
+
+    const currentLocation = useParams().category?.substring(1); // по url получаем категорию текущую и сравниваем
 
     const [view, changeView] = useState('tile'); // вид карточек
     const [filteredBooks, setFilteredBooks] = useState(null); // фильтрованный массив книг
     const [rateBooksFromHigh, setRate] = useState(true); // отображение книг по рейтингу
     const [searchValue, setSearchValue] = useState(''); // слово для поиска
+    
+    
     
     const sortBooksOnRating = (arr) => {
         // console.log('arr: ', arr);

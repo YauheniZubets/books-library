@@ -1,6 +1,8 @@
 import {takeEvery, call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
+import { userToken } from './user-interception';
+
 import { fetchAllCategories, fetchAllCategoriesSuccess, fetchAllCategoriesErr } from '../redux/categories-reducer';
 
 export function* watchAxiosCategories () {

@@ -1,0 +1,1 @@
+export {RegistrationNewUserPage} from './registration-new-page';

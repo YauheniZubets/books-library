@@ -10,6 +10,9 @@ import { MainPage } from './pages/main';
 import { BookPage } from './pages/book';
 import { RulesPage } from './pages/rules';
 import { Agreement } from './pages/agreement';
+import { RegistrationPage } from './pages/registration';
+import { RegistrationNewUserPage } from './pages/registration-new-user';
+import { ForgotPassPage } from './pages/forgot-pass';
 
 export const App = () => {
 
@@ -24,7 +27,9 @@ export const App = () => {
     const cbCloseBurger = (ev) => {
         const elem = ev.target;
         if (mobMenu && !elem.closest('.Mobile-Menu')) dispatch(showMobileMenu());
-    }
+    };
+
+    const loggedTokenUserFromLocal = localStorage.getItem('jwt');
 
     useEffect(()=> {
         dispatch(axiosStart());
@@ -32,15 +37,18 @@ export const App = () => {
     }, [dispatch]);
 
     return (
-        <div onClick={cbCloseBurger} role='presentation'>
+        <div onClick={cbCloseBurger} role='presentation' data-test-id='auth'>
             <HashRouter>
                 <Routes>
-                    <Route path='/' exact={true} element={<Navigate to='/books/:all' />} />
+                    <Route path='/' exact={true} element={<Navigate to={loggedTokenUserFromLocal ? '/books/all' : '/auth'} />} />
                     <Route path='/books/all' element={<MainPage allLinks={allLinks} toogleLinks={toogleLinks} />} />
                     <Route path='/books/:category' element={<MainPage allLinks={allLinks} toogleLinks={toogleLinks}  />} />
                     <Route path='/books/:category/:numb' element={<BookPage  />} />
                     <Route path='/rules' element={<RulesPage allLinks={allLinks} toogleLinks={toogleLinks}  />} />
                     <Route path='/agreement' element={<Agreement allLinks={allLinks} toogleLinks={toogleLinks}  />} />
+                    <Route path ='/auth' element={<RegistrationPage />} />
+                    <Route path ='/registration' element={<RegistrationNewUserPage />} />
+                    <Route path ='/forgot-pass' element={<ForgotPassPage />} />
                 </Routes>
             </HashRouter>
         </div>
