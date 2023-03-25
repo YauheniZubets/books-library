@@ -141,9 +141,6 @@ export const Burger = (props) => {
                 </div>
                 <div className='hor-line' />
                 <div className='navigation-rules'>
-                    <NavLink to='' >Профиль</NavLink>
-                </div>
-                <div className='navigation-rules'>
                     <NavLink to='/auth' onClick={cbLogOut} data-test-id='exit-button'>Выход</NavLink>
                 </div>
             </div>

@@ -10,7 +10,6 @@ export function* watchAxiosProds () {
 };
 
 function* axiosProds () {
-    console.log('allbooksfetching');
     try {
         yield put(fetchAllBooks());
         const data = yield call(() => axios.get('https://strapi.cleverland.by/api/books'));

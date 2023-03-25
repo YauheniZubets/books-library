@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { Burger } from '../burger/burger';
 
@@ -7,8 +8,11 @@ import avatar from './img/avatar.png';
 
 import './header.css';
 
-export const Header = (props) => (
+export const Header = (props) => {
 
+    const userName = localStorage.getItem('userFirstName');
+
+    return (
     <section className='header' >
         <div className='header-names'>
             <div className='header-burger'>
@@ -21,7 +25,7 @@ export const Header = (props) => (
             </Link>
             <div className='text-head head-pos'>Библиотека</div>
             <div className='login'>
-                <div className='text-login'>Привет, Иван!</div>
+                <div className='text-login'>{userName ? `Привет, ${userName}!` : 'Ошибка'}</div>
                 <div>
                     <img src={avatar} alt='ava'/>
                 </div>
@@ -29,4 +33,5 @@ export const Header = (props) => (
         </div>
     </section>
 
-)
+    )
+}

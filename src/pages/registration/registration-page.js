@@ -26,9 +26,6 @@ export const RegistrationPage = () => {
         if (userDataToAuth) dispatch(axiosAuthUserStart(userDataToAuth));
     };
 
-    
-
-
     useEffect(()=> {
         if(isError && !isErrorWrong) setStage(3);
     }, [isError, isErrorWrong]);
@@ -43,9 +40,8 @@ export const RegistrationPage = () => {
             dispatch(axiosCategoriesStart());
             navigate('/books/all');
             localStorage.setItem('jwt', authUser.payload.data.jwt);
+            localStorage.setItem('userFirstName', authUser.payload.data.user.firstName);
         }
-        // if(authUser) // link to books; hook: useNavigate и токен записать в редакс
-        // если isErrorWrong то подписаться на него в компоненте с формой и там выдать ошибку
     }, [authUser, navigate, dispatch]);
 
     return(

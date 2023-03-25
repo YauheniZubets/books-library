@@ -72,10 +72,6 @@ export const RegistrationNew = (props) => {
         checkPass(pass, rules);
     }
 
-    useEffect(()=>{
-        console.log(errors.password);
-    })
-
     return (
     <section className='registration' >
         <div className='registration-layout'>

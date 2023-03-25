@@ -13,7 +13,11 @@ export const RegNewUserMail = (props) => {
 
     const dispatch = useDispatch();
 
-    const { register, handleSubmit, watch, formState: { errors, isValid }, setValue } = useForm({mode:'onBlur'});
+    const { register, handleSubmit, watch, formState: { errors, isValid }, setValue } = useForm({
+        mode:'onBlur', 
+        defaultValues: {
+        phone: '+375 (44) xxx-xx-xx'
+      }});
 
     const onSubmit = data => {
         const allNewUserData = {
@@ -35,7 +39,7 @@ export const RegNewUserMail = (props) => {
             <div className='registration-new-step'>{registrationStage} шаг из 3</div>
                 <form onSubmit={handleSubmit(onSubmit)} data-test-id='register-form'>
                     <div className='registration-inp'>
-                    <MaskedInput name='phone' id='phone' placeHolder='+375 (44) xxx-xx-xx' {...register('phone', {
+                    <MaskedInput name='phone' id='phone' placeholder ='+375 (xx) xxx-xx-xx' {...register('phone', {
                         required: true,
                         pattern: /^\+375 \((25|29|33|44)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$/,
                         onChange: (e) => setValue('phone', e.target.value)

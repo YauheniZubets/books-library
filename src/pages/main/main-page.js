@@ -16,11 +16,8 @@ import './main-page.css';
 
 export const MainPage = (props) => {
 
-    const {authUser} = useSelector(state => state.authUser);
-
     const navigate = useNavigate();
-    if (!authUser) navigate('/auth');
-
+    
     const currentLocation = useParams().category?.substring(1); // по url получаем категорию текущую и сравниваем
 
     const [view, changeView] = useState('tile'); // вид карточек
@@ -28,10 +25,7 @@ export const MainPage = (props) => {
     const [rateBooksFromHigh, setRate] = useState(true); // отображение книг по рейтингу
     const [searchValue, setSearchValue] = useState(''); // слово для поиска
     
-    
-    
     const sortBooksOnRating = (arr) => {
-        // console.log('arr: ', arr);
         const arrToSort = [...arr];
         arrToSort.sort((a, b) => {
             return rateBooksFromHigh 
@@ -44,9 +38,7 @@ export const MainPage = (props) => {
     const searchBooksOnWords = (wordToSearch, arr) => {
         const wordToSearchLower = wordToSearch.toLowerCase();
         const arrForSearch = [...arr];
-        // console.log('arrForSearch: ', arrForSearch);
         const filteredOnWord = arrForSearch.filter(item => item.title.toLowerCase().indexOf(wordToSearchLower) >= 0);
-        // console.log('filteredOnWord: ', filteredOnWord);
         return filteredOnWord;
     }
 
@@ -59,9 +51,6 @@ export const MainPage = (props) => {
     const {isLoading, isError} = useSelector(state=>state.allBooksList);
     const bookList = useSelector(state => state.allBooksList.allBooks.payload); // все книги с бэка с редакса
     const categs = useSelector(state=>state.allCategories.allCategories.payload);
-    // console.log('categs: ', categs);
-    // console.log('bookList: ', bookList);
-    // if (bookList) sortBooksOnRating();
 
     let bigCards = [];
     let smallCards = [];
@@ -69,7 +58,6 @@ export const MainPage = (props) => {
     const categoryFilter = (category) => bookList.filter(item => item.categories.includes(category));
 
     const changeCategory = (newCategory) => {
-        console.log('newCategory: ', newCategory);
         if (newCategory) {
             const filteredList = categoryFilter(newCategory);
             setFilteredBooks(filteredList);
@@ -79,11 +67,9 @@ export const MainPage = (props) => {
     }
 
     useEffect(() => {
-    //    console.log('дид маунт Мэйн пэйдж');
        if (currentLocation && categs) {
         const rusCategory = categs.find(item => item.path === currentLocation);
         if (rusCategory && bookList) {
-            console.log('работает фильтр useEffect');
             const filteredList = categoryFilter(rusCategory.name);
             setFilteredBooks(filteredList);
         } else {
@@ -92,15 +78,13 @@ export const MainPage = (props) => {
        }
     }, [categs, currentLocation]);
 
+    const loggedTokenUserFromLocal = localStorage.getItem('jwt');
+
     useEffect(() => {
-        // console.log('searchvalue: ', searchValue);
-        // console.log('filtered books', filteredBooks);
-    })
+        if (!loggedTokenUserFromLocal) navigate('/auth');
+    }, [loggedTokenUserFromLocal, navigate]);
     
-    // console.log('render');
     if (bookList) {
-        // console.log('bookList: ', bookList);
-        // console.log('filteredBooks: ', filteredBooks);
         bigCards = (filteredBooks 
             ? sortBooksOnRating(searchValue ? searchBooksOnWords(searchValue, filteredBooks) : filteredBooks) 
             : sortBooksOnRating(searchValue ? searchBooksOnWords(searchValue, bookList) : bookList))

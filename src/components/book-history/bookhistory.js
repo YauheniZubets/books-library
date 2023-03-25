@@ -6,7 +6,6 @@ import './bookhistory.css';
 export const BookHistory = (props) => {
 
     const params = useParams().category.substring(1);
-    console.log('params: ', params);
 
     const {category, title} = props;
 

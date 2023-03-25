@@ -32,9 +32,11 @@ export const App = () => {
     const loggedTokenUserFromLocal = localStorage.getItem('jwt');
 
     useEffect(()=> {
-        dispatch(axiosStart());
-        dispatch(axiosCategoriesStart());
-    }, [dispatch]);
+        if (loggedTokenUserFromLocal) {
+            dispatch(axiosStart());
+            dispatch(axiosCategoriesStart());
+        }
+    }, [dispatch, loggedTokenUserFromLocal]);
 
     return (
         <div onClick={cbCloseBurger} role='presentation' data-test-id='auth'>

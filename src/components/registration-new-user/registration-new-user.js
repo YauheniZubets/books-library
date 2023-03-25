@@ -10,7 +10,7 @@ export const RegNewUser = (props) => {
 
     const {registrationStage, changeStage} = props;
 
-    const { register, watch, formState: { errors, isValid }, getValues } = useForm({mode:'onChange'});
+    const { register, watch, formState: { errors, isValid }, getValues } = useForm({mode:'onBlur'});
 
     return (
     <section className='registration' >

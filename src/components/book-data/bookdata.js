@@ -72,7 +72,7 @@ export const BookData = (props) => {
                         {props.authors[0]}, {props.year}
                     </div>
                     <div className='book-data-order'>
-                        <OrderButton wide={true} />
+                        <OrderButton wide={true} busy={true} date={12.2023} />
                     </div>
                     <div className='book-data-descr-general'>
                         <div className='book-data-descr-name'>О книге</div>
@@ -80,9 +80,6 @@ export const BookData = (props) => {
                             <div>
                                 {props.description}
                             </div>
-                            {/* <div>
-                                Откройте великолепно иллюстрированную книгу и вы сразу поймете, что алгоритмы — это просто. А грокать алгоритмы — это веселое и увлекательное занятие.
-                            </div> */}
                         </div>  
                     </div>
                 </div>
@@ -93,9 +90,6 @@ export const BookData = (props) => {
                     <div>
                         {props.description}
                     </div>
-                    {/* <div>
-                        Откройте великолепно иллюстрированную книгу и вы сразу поймете, что алгоритмы — это просто. А грокать алгоритмы — это веселое и увлекательное занятие.
-                    </div> */}
                 </div>  
             </div>
             <div className='book-data-feed-and-rating'>
@@ -151,33 +145,6 @@ export const BookData = (props) => {
                     <div className='book-data-feed'>
                         <div className='book-data-feed-all'>
                             {feeds}
-                            {/* <div className='book-data-feedback-and-stars'>
-                                <div className='book-data-feedback'>
-                                    <div><img src = {feedUser} alt='feed-user' /></div>
-                                    <div>Иван Иванов</div>
-                                    <div>5 января 2019</div>
-                                </div>
-                                <Stars widePadding = {true} />
-                            </div>
-                            <div className='book-data-feedback-and-stars'>
-                                <div className='book-data-feedback'>
-                                    <div><img src = {feedUser} alt='feed-user' /></div>
-                                    <div>Николай Качков</div>
-                                    <div>20 июня 2018</div>
-                                </div>
-                                <Stars widePadding = {true} />
-                                <div className='book-data-feedback-body'>
-                                    Учитывая ключевые сценарии поведения, курс на социально-ориентированный национальный проект не оставляет шанса для анализа существующих паттернов поведения. Для современного мира внедрение современных методик предоставляет широкие возможности для позиций, занимаемых участниками в отношении поставленных задач. Как уже неоднократно упомянуто, сделанные на базе интернет-аналитики выводы будут в равной степени предоставлены сами себе. Вот вам яркий пример современных тенденций — глубокий уровень погружения создаёт предпосылки для своевременного выполнения сверхзадачи. И нет сомнений, что акционеры крупнейших компаний, инициированные исключительно синтетически, превращены в посмешище, хотя само их существование приносит несомненную пользу обществу.
-                                </div>
-                            </div>
-                            <div className='book-data-feedback-and-stars'>
-                                <div className='book-data-feedback'>
-                                    <div><img src = {feedUser} alt='feed-user' /></div>
-                                    <div>Екатерина Беляева</div>
-                                    <div>18 февраля 2018</div>
-                                </div>
-                                <Stars widePadding = {true} />
-                            </div> */}
                         </div>
                     </div>
                 }

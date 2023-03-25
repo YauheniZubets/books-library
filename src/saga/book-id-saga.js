@@ -8,7 +8,6 @@ export function* watchAxiosOneBook () {
 };
 
 function* axiosOneBook (id) {
-    console.log('ONEbookfetching');
     try {
         yield put(fetchOneBook());
         const data = yield call(() => axios.get(`https://strapi.cleverland.by/api/books/${id.id}`));

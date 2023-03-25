@@ -11,7 +11,6 @@ function* axiosAuthUser (user) {
     try {
         yield put(authUser());
         const data = yield call(() => axios.post('https://strapi.cleverland.by/api/auth/local', user.user));
-        console.log('data: ', data);
         yield put(authUserSuccess(data))
     } catch (error) {
         console.log('error: ', error);
