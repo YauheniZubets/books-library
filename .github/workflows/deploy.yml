@@ -24,9 +24,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: yarn ci, build
+      - name: yarn build
         run: |
-          yarn ci
           yarn run build 
       - name: deploy to gh-pages
         run: rsync --archive --compress --delete . https://yauhenizubets.github.io/books-library/
