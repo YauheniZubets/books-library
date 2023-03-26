@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: yarn build
         run: |
-          yarn run build 
+          yarn build 
       - name: deploy to gh-pages
         run: rsync --archive --compress --delete . https://yauhenizubets.github.io/books-library/
         working-directory: ./build       
