@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/books-library/static/css/main.8a9923ce.css",
+    "main.js": "/books-library/static/js/main.e5a188c7.js",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/books-library/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
+    "static/media/booklabel.png": "/books-library/static/media/booklabel.e588094253faf25eed6d.png",
+    "static/media/book.png": "/books-library/static/media/book.c5354e3fbb095c5ccf73.png",
+    "static/media/Search-orange.svg": "/books-library/static/media/Search-orange.a197a7e8215192ce8d7af68d19f92088.svg",
+    "static/media/instagram.svg": "/books-library/static/media/instagram.453dbc276e0829179c8f31c15c4e18dd.svg",
+    "static/media/Plit_Action_Grey.svg": "/books-library/static/media/Plit_Action_Grey.7848f0038344d592068982cfde10329f.svg",
+    "static/media/close.svg": "/books-library/static/media/close.3402f07d521712666259242e20f4b5e2.svg",
+    "static/media/Plit_Action.svg": "/books-library/static/media/Plit_Action.edfb515d8da365baf36f94be21bed62f.svg",
+    "static/media/vk.svg": "/books-library/static/media/vk.d138f4c4484d6187199187a792b6478f.svg",
+    "static/media/Sort-low.svg": "/books-library/static/media/Sort-low.e322e55214f576a5c2c32b3679500e8a.svg",
+    "static/media/Sort_Action.svg": "/books-library/static/media/Sort_Action.17eb551cf09559941b383eb0c3aa80ae.svg",
+    "static/media/cat.svg": "/books-library/static/media/cat.02fa9fbf140a9a7bd8c7426764ff76f2.svg",
+    "static/media/Rows_Action_White.svg": "/books-library/static/media/Rows_Action_White.5e247eb50d4fb9baf16c1e8aa4f227d0.svg",
+    "static/media/Rows_Action.svg": "/books-library/static/media/Rows_Action.0ea2740350f546531ffc68b068e8cfc2.svg",
+    "static/media/Icon_Action.svg": "/books-library/static/media/Icon_Action.9ac2de41ffa0689b64a6f74726a6b053.svg",
+    "static/media/hided.svg": "/books-library/static/media/hided.2f730c0ac8c855d7e8b48f4fe80850b7.svg",
+    "static/media/arrow-bot.svg": "/books-library/static/media/arrow-bot.f00e586a504fcb32ace1f3aac733b4c1.svg",
+    "static/media/arrow-top.svg": "/books-library/static/media/arrow-top.35c0880b946ccae17bb3cd17368c330d.svg",
+    "index.html": "/books-library/index.html",
+    "static/media/close-err.svg": "/books-library/static/media/close-err.8575e7decb66b89d658dfc5f7e41c08b.svg",
+    "static/media/fetchErr.svg": "/books-library/static/media/fetchErr.d0f931225b9332388d0b94a1c3414a6c.svg",
+    "static/media/preloader.svg": "/books-library/static/media/preloader.0316e33f4bc892cf1888856713cde879.svg",
+    "static/media/showed.svg": "/books-library/static/media/showed.6648ff5dec351ea5e1476a4e302df1af.svg",
+    "static/media/linkedin.svg": "/books-library/static/media/linkedin.b9fd5179e0fbb884eb7337d3161ab260.svg",
+    "static/media/arrowbotblack.svg": "/books-library/static/media/arrowbotblack.7fcd66d91b2121701bbefdb958bfa5ea.svg",
+    "static/media/arrowupblack.svg": "/books-library/static/media/arrowupblack.f76cf6bce194f528a1fe9ab401297f55.svg",
+    "static/media/facebook.svg": "/books-library/static/media/facebook.ecf907339975a81ea1238116118328a1.svg",
+    "static/media/arrow-right.svg": "/books-library/static/media/arrow-right.18d365a4fe1bc021e1df71aaeddc865c.svg",
+    "static/media/pass-appr.svg": "/books-library/static/media/pass-appr.f8ad084261815f5a72395119b8099c37.svg",
+    "static/media/arrow-left.svg": "/books-library/static/media/arrow-left.3de3f4a06d585602b6f5bf811f44f922.svg",
+    "static/media/slash.svg": "/books-library/static/media/slash.5049db2f1111b033ded6f4c347257986.svg",
+    "main.8a9923ce.css.map": "/books-library/static/css/main.8a9923ce.css.map",
+    "main.e5a188c7.js.map": "/books-library/static/js/main.e5a188c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a9923ce.css",
+    "static/js/main.e5a188c7.js"
+  ]
+}
